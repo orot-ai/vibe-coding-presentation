@@ -1,0 +1,14 @@
+{
+  "name": "vibe-coding-presentation",
+  "version": 2,
+  "public": true,
+  "buildCommand": "",
+  "outputDirectory": ".",
+  "framework": null,
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
