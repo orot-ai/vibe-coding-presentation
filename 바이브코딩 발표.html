@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>바이브코딩 발표</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Pretendard', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+            background-color: white;
+            color: #0A0A0A;
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        .presentation-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 60px;
+            opacity: 0;
+            transform: translateX(100%);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .slide.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .slide h1 {
+            font-size: 6rem;
+            font-weight: 700;
+            margin-bottom: 50px;
+            line-height: 1.1;
+        }
+
+        .slide h2 {
+            font-size: 4.5rem;
+            font-weight: 600;
+            margin-bottom: 40px;
+            line-height: 1.2;
+        }
+
+        .slide p {
+            font-size: 3rem;
+            font-weight: 400;
+            line-height: 1.3;
+            max-width: 1100px;
+        }
+
+        .slide .subtitle {
+            font-size: 2.2rem;
+            color: #666;
+            margin-top: 30px;
+        }
+
+        .navigation {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            font-size: 1.2rem;
+            color: #666;
+            z-index: 1000;
+        }
+
+        .slide-counter {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            font-size: 1.1rem;
+            color: #999;
+            z-index: 1000;
+        }
+
+        .tools-list {
+            text-align: left;
+            margin-top: 30px;
+        }
+
+        .tools-list li {
+            font-size: 2.5rem;
+            margin: 20px 0;
+            list-style: none;
+        }
+
+        .tools-list li:before {
+            content: "•";
+            color: #7C3AED;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        .portfolio-link {
+            font-size: 3.5rem;
+            color: #7C3AED;
+            font-weight: 600;
+            margin-top: 40px;
+            text-decoration: none;
+            display: block;
+            transition: all 0.3s ease;
+            border: 3px solid #7C3AED;
+            padding: 20px 40px;
+            border-radius: 15px;
+            background: white;
+        }
+
+        .portfolio-link:hover {
+            background: #7C3AED;
+            color: white;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation-container">
+        <div class="slide-counter">
+            <span id="current-slide">1</span> / <span id="total-slides">32</span>
+        </div>
+
+        <!-- 슬라이드 1: 제목 -->
+        <div class="slide active">
+            <h1>바이브코딩이란<br>무엇인가?</h1>
+            <p class="subtitle">AI와 함께하는 직관적 개발</p>
+        </div>
+
+        <!-- 슬라이드 2: 질문 1 -->
+        <div class="slide">
+            <h2>바이브코딩에 대해<br>어떻게 생각하시나요?</h2>
+        </div>
+
+        <!-- 슬라이드 3: 질문 2 -->
+        <div class="slide">
+            <h2>바이브코딩으로<br>무엇을 할 수 있을까요?</h2>
+        </div>
+
+        <!-- 슬라이드 4: 질문 3 -->
+        <div class="slide">
+            <h2>바이브코딩으로<br>무엇을 하고 싶으신가요?</h2>
+        </div>
+
+        <!-- 슬라이드 5: 시작 이야기 -->
+        <div class="slide">
+            <h2>제 이야기부터 시작하겠습니다</h2>
+        </div>
+
+        <!-- 슬라이드 6: 경험 시점 -->
+        <div class="slide">
+            <h2>5-6개월 전,<br>완전 비개발자였던 제가<br>처음 바이브코딩을 경험한 순간</h2>
+        </div>
+
+        <!-- 슬라이드 7: 문제 상황 -->
+        <div class="slide">
+            <h2>PPT 슬라이드 300장을<br>투명 배경 PNG로 변환해야 했어요</h2>
+        </div>
+
+        <!-- 슬라이드 8: 문제의 어려움 -->
+        <div class="slide">
+            <h2>하나씩 우클릭으로 저장?<br>매크로도 막혀있는 상황...</h2>
+        </div>
+
+        <!-- 슬라이드 9: 해결 시작 -->
+        <div class="slide">
+            <h2>ChatGPT와 함께<br>파이썬 코드를 작성했어요</h2>
+        </div>
+
+        <!-- 슬라이드 10: 개발 과정 -->
+        <div class="slide">
+            <h2>VS Code도 처음 써보고<br>EXE 파일까지 만들었어요</h2>
+        </div>
+
+        <!-- 슬라이드 11: 결과 -->
+        <div class="slide">
+            <h2>완성도가 너무 좋은<br>프로그램이 나왔어요!</h2>
+        </div>
+
+        <!-- 슬라이드 12: 친구 반응 -->
+        <div class="slide">
+            <h2>친구가 아주 만족하며<br>지금도 잘 쓰고 있어요</h2>
+        </div>
+
+        <!-- 슬라이드 13: 배포 결심 -->
+        <div class="slide">
+            <h2>"이걸 배포해야겠다!"</h2>
+        </div>
+
+        <!-- 슬라이드 14: 랜딩페이지 아이디어 -->
+        <div class="slide">
+            <h2>Claude와 함께<br>멋진 랜딩페이지를 만들었어요</h2>
+        </div>
+
+        <!-- 슬라이드 15: 배포 성공 -->
+        <div class="slide">
+            <h2>온라인 배포까지 성공!</h2>
+        </div>
+
+        <!-- 슬라이드 16: 기대감 -->
+        <div class="slide">
+            <h2>"와~ 이제 사람들이<br>내가 만든 엄청난 프로그램을<br>잘 쓰겠지!"</h2>
+        </div>
+
+        <!-- 슬라이드 17: 현실 -->
+        <div class="slide">
+            <h2>그런데...</h2>
+        </div>
+
+        <!-- 슬라이드 18: 배포 후 현실 -->
+        <div class="slide">
+            <h2>아무도 관심이 없었습니다 ㅋㅋ</h2>
+        </div>
+
+        <!-- 슬라이드 19: 비개발자의 어려움 -->
+        <div class="slide">
+            <h2>호스팅, 코드 수정, 오류 해결...<br>비개발자에게는 너무 힘들었어요</h2>
+        </div>
+
+        <!-- 슬라이드 20: AI 기술 발전 -->
+        <div class="slide">
+            <h2>그런데 어느 순간부터<br>AI들의 코딩 실력이<br>미친듯이 좋아지기 시작했어요!</h2>
+        </div>
+
+        <!-- 슬라이드 21: 개발 속도 -->
+        <div class="slide">
+            <h2>며칠 걸리던 작업이<br>몇 시간으로 단축됐어요</h2>
+        </div>
+
+        <!-- 슬라이드 22: 현재 성과 -->
+        <div class="slide">
+            <h2>지금은 하루에 하나 이상의<br>결과물을 만들 수 있어요</h2>
+        </div>
+
+        <!-- 슬라이드 23: 결과물 소개 -->
+        <div class="slide">
+            <h2>최근에 바이브코딩으로<br>만든 것들을 보여드릴게요</h2>
+            <a href="https://miri-vibe.vercel.app/" target="_blank" class="portfolio-link">
+                https://miri-vibe.vercel.app/
+            </a>
+        </div>
+
+        <!-- 슬라이드 24: ChatGPT 경험 질문 -->
+        <div class="slide">
+            <h2>ChatGPT와 대화해보신 적 있나요?</h2>
+        </div>
+
+        <!-- 슬라이드 25: 대화형 개발 -->
+        <div class="slide">
+            <h2>그런 식으로 그냥 대화하면서<br>원하는 서비스를 만들면 됩니다</h2>
+        </div>
+
+        <!-- 슬라이드 14: 바이브코딩 시작하기 -->
+        <div class="slide">
+            <h2>바이브코딩을 시작하고 싶다면?</h2>
+            <p>비용 부담이 되신다면<br>
+               이 3가지 도구를 추천합니다<br><br>
+               모두 웹 기반이고<br>
+               바로 호스팅까지 가능해요!</p>
+        </div>
+
+        <!-- 슬라이드 15: Lovable -->
+        <div class="slide">
+            <h2>추천 도구 1: Lovable</h2>
+            <div class="tools-list">
+                <li>하루 5번 무료 사용 가능</li>
+                <li>웹 기반 풀스택 개발</li>
+                <li>React + Tailwind CSS 자동 생성</li>
+                <li>Supabase 통합으로 백엔드까지</li>
+                <li>GitHub 연동 및 코드 소유권</li>
+                <li>20배 빠른 개발 속도</li>
+            </div>
+        </div>
+
+        <!-- 슬라이드 16: Google AI Studio -->
+        <div class="slide">
+            <h2>추천 도구 2: Google AI Studio</h2>
+            <div class="tools-list">
+                <li>Build 모드로 무제한 사용</li>
+                <li>텍스트, 이미지, 비디오 프롬프트 지원</li>
+                <li>Gemini 2.5 Pro 모델 활용</li>
+                <li>네이티브 코드 에디터</li>
+                <li>Firebase Studio 연동</li>
+                <li>AI 앱 프로토타입에 최적화</li>
+            </div>
+        </div>
+
+        <!-- 슬라이드 17: Claude Code -->
+        <div class="slide">
+            <h2>추천 도구 3: Claude Code</h2>
+            <div class="tools-list">
+                <li>터미널 기반 AI 코딩 어시스턴트</li>
+                <li>전체 코드베이스 이해</li>
+                <li>파일 직접 편집 및 명령 실행</li>
+                <li>GitHub 통합</li>
+                <li>Claude Opus 4, Sonnet 4 지원</li>
+                <li>최고 수준의 코딩 능력</li>
+            </div>
+        </div>
+
+        <!-- 슬라이드 18: Claude Code MCP 활용 -->
+        <div class="slide">
+            <h2>Claude Code의 진짜 파워:<br>MCP 서버 활용</h2>
+            <p>MCP(Model Context Protocol)<br>
+               = AI가 외부 도구와 연결하는 방법<br><br>
+               예시: 토스페이먼츠 결제 시스템 구축</p>
+        </div>
+
+        <!-- 슬라이드 19: Toss MCP 실전 예시 -->
+        <div class="slide">
+            <h2>실전 사례: Toss MCP로<br>결제 시스템 구축하기</h2>
+            <div class="tools-list">
+                <li>"토스페이먼츠 카드 결제 구현해줘"</li>
+                <li>Claude가 Toss MCP로 최신 문서 자동 조회</li>
+                <li>v1, v2 API 문서 실시간 참조</li>
+                <li>보안 가이드라인 자동 적용</li>
+                <li>완성된 결제 시스템 코드 생성</li>
+                <li>실시간 테스트까지 진행</li>
+            </div>
+        </div>
+
+        <!-- 슬라이드 20: MCP의 장점 -->
+        <div class="slide">
+            <h2>MCP 서버가 바꾸는<br>바이브코딩</h2>
+            <p>• 최신 문서를 실시간으로 참조<br>
+               • 복잡한 API 가이드라인 자동 적용<br>
+               • 사람이 놓치기 쉬운 보안 사항까지<br><br>
+               결과: 전문가 수준의 구현체</p>
+        </div>
+
+        <!-- 슬라이드 21: 마무리 -->
+        <div class="slide">
+            <h2>바이브코딩의 미래</h2>
+            <p>점점 더 쉬워질 것입니다<br><br>
+               지금 시작하시면<br>
+               놀라운 결과를 경험하실 수 있을 거예요</p>
+            <p class="subtitle">질문이나 궁금한 점이 있으시면 언제든지!</p>
+        </div>
+
+        <div class="navigation">
+            ← → 또는 스페이스바로 슬라이드 이동
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        
+        document.getElementById('total-slides').textContent = totalSlides;
+
+        function showSlide(n) {
+            // 모든 슬라이드에서 active 클래스 제거
+            slides.forEach(slide => slide.classList.remove('active'));
+            
+            // 현재 슬라이드 인덱스 업데이트
+            currentSlide = (n + totalSlides) % totalSlides;
+            
+            // 새 슬라이드에 active 클래스 추가
+            slides[currentSlide].classList.add('active');
+            
+            // 슬라이드 번호 업데이트
+            document.getElementById('current-slide').textContent = currentSlide + 1;
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        // 키보드 이벤트 리스너
+        document.addEventListener('keydown', function(e) {
+            switch(e.key) {
+                case 'ArrowRight':
+                case ' ':
+                case 'Enter':
+                    e.preventDefault();
+                    nextSlide();
+                    break;
+                case 'ArrowLeft':
+                case 'Backspace':
+                    e.preventDefault();
+                    prevSlide();
+                    break;
+                case 'Home':
+                    e.preventDefault();
+                    showSlide(0);
+                    break;
+                case 'End':
+                    e.preventDefault();
+                    showSlide(totalSlides - 1);
+                    break;
+            }
+        });
+
+        // 마우스 클릭 이벤트 제거 (방향키로만 조작)
+
+        // 초기화
+        showSlide(0);
+    </script>
+</body>
+</html>
